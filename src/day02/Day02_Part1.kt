@@ -32,7 +32,7 @@ fun main() {
     println(part1(input))
 }
 
-fun checkWin(player1: String, player2: String): Int = when {
+private fun checkWin(player1: String, player2: String): Int = when {
     player1 == "A" && player2 == "Y" -> 6
     player1 == "A" && player2 == "X" -> 3
     player1 == "A" && player2 == "Z" -> 0
@@ -45,7 +45,7 @@ fun checkWin(player1: String, player2: String): Int = when {
     else -> throw Exception("invalid")
 }
 
-fun getShapeScore(shape: String): Int = when (shape) {
+private fun getShapeScore(shape: String): Int = when (shape) {
     "X" -> 1
     "Y" -> 2
     else -> 3
