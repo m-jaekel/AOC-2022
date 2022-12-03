@@ -30,7 +30,7 @@ private fun getIncorrectItem(backpackItems: String): Char {
     throw Exception("no incorrect item found!")
 }
 
-private fun calculatePriorityScore(incorrectItems: List<Char>): Int {
+fun calculatePriorityScore(incorrectItems: List<Char>): Int {
     // https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html
     val score = incorrectItems.map { item ->
         when (item.code) {
