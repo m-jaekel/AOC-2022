@@ -1,17 +1,8 @@
 fun main() {
 
     fun part1(input: List<String>): Int {
-
-        val elfPairs = input.map { pairs ->
-            pairs.split(",").let { elves ->
-                elves.map { elf ->
-                    elf.split("-").map { ids -> ids.toInt() }.let { (it[0]..it[1]).toSet() }
-                }
-            }
-        }
-
         var fullContainCount = 0
-        elfPairs.forEach {
+        parseElfPairs(input).forEach {
             if (it[0].containsAll(it[1]) || it[1].containsAll(it[0])) {
                 fullContainCount++
             }
@@ -24,4 +15,12 @@ fun main() {
 
     val input = readInput("day04/input")
     println(part1(input))
+}
+
+fun parseElfPairs(input: List<String>) = input.map { pairs ->
+    pairs.split(",").let { elves ->
+        elves.map { elf ->
+            elf.split("-").map { ids -> ids.toInt() }.let { (it[0]..it[1]).toSet() }
+        }
+    }
 }
