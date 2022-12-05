@@ -1,3 +1,7 @@
+package day04
+
+import readInput
+
 fun main() {
 
     fun part2(input: List<String>): Int {

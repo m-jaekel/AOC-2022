@@ -1,5 +1,6 @@
-import day05.data04_data
-import day05.parseMoves
+package day05
+
+import readInput
 
 fun main() {
     fun part2(input: List<String>): String {
