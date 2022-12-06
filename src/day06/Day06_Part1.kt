@@ -3,9 +3,11 @@ package day06
 import readInput
 
 fun main() {
-
     fun part1(input: List<String>): Int {
-        return input.size
+        input.first().forEachIndexed { index, _ ->
+            if (input.first().subSequence(index, index + 4).toSet().size == 4) return index + 4
+        }
+        return 0
     }
 
     val testInput = readInput("day06/test_input")
